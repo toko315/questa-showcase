@@ -1,4 +1,5 @@
 const NUMS = [1,2,3,5,6,7,8,9,11,14,15,16,17,18,19,20,21,22,23,24,25,27,28,30,31,32,35];
+const ICON_MAP = { 30: 'icon3', 31: 'icon4', 32: 'icon2' };
 let currentLang = 'en';
 let currentCourse = null;
 
@@ -18,7 +19,7 @@ function buildGrid() {
     item.className = 'icon-item';
 
     const img = document.createElement('img');
-    img.src = `images/icon/course${n}.png`;
+    img.src = `images/icon/${ICON_MAP[n] || 'course' + n}.png`;
     img.alt = `Course ${n}`;
     img.onerror = () => { img.src = 'images/icon/default.png'; img.onerror = null; };
 
